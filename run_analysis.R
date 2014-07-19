@@ -78,6 +78,13 @@ run_analysis<-
   ##call the tidy data "project_tidy_data
   library(plyr)
   project_tidy_data<-ddply(mean.std, .(subject,activity), numcolwise(mean))
+  
+  ##Tidy up the names of the column variables remove "-" and "()" from names
+  tidy_col<-names(project_tidy_data)
+  tidy_col<-gsub("-","",tidy_col)
+  tidy_col<-gsub("\\()","",tidy_col)
+  names(project_tidy_data)<-tidy_col
+  
   ##save the Data Frame to the project folder in a csv format
   write.csv(project_tidy_data,"project_tidy_data.csv")
   print("File Name: project_tidy_data")
