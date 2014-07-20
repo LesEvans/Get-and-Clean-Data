@@ -15,7 +15,7 @@ http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartpho
 Variables 3 to 68 are numeric
  
 
-They are measures taken a samsung smart phone using its accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. 
+They are measures taken by a samsung smart phone using its accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. 
 
 The acceleration signal is separated into body and gravity acceleration signals tBodyAccXYZ and tGravityAccXYZ 
 
