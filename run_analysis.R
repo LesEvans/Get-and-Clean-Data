@@ -1,9 +1,9 @@
 run_analysis<-
 {
    ##Read the test data X gives the measures for each variable
-  x<-read.table("./test/X_test.txt")
+  x<-read.table("./UCI HAR Dataset/test/X_test.txt")
   ##Read the test data Y gives a numberic value 1:6 for each activity  
-  y<-read.table("./test/Y_test.txt")
+  y<-read.table("./UCI HAR Dataset/test/Y_test.txt")
   
   ## Convert each of the numbers 1:6 to it description
   attach(y)
@@ -15,7 +15,7 @@ run_analysis<-
   y$V1[V1 == 6] <- "laying"
   detach(y)
   ##Read the subjects 1:30 match to the activities  
-  s<-read.table("./test/subject_test.txt")
+  s<-read.table("./UCI HAR Dataset/test/subject_test.txt")
   
   ##Merge each of the tables into a single table using cbind
   
@@ -25,9 +25,9 @@ run_analysis<-
   ##repeat the process to create a single data frame for the training data   
   
   ##Read the test data X gives the measures for each variable  
-  x<-read.table("./train/X_train.txt")
+  x<-read.table("./UCI HAR Dataset/train/X_train.txt")
   ##Read the test data Y gives a numberic value 1:6 for each activity  
-  y<-read.table("./train/Y_train.txt")
+  y<-read.table("./UCI HAR Dataset/train/Y_train.txt")
   
   ## Convert each of the numbers 1:6 to it description
   attach(y)
@@ -39,7 +39,7 @@ run_analysis<-
   y$V1[V1 == 6] <- "laying"
   detach(y)
   ##Read the subjects 1:30 match to the activities    
-  s<-read.table("./train/subject_train.txt")
+  s<-read.table("./UCI HAR Dataset/train/subject_train.txt")
   
   ##Merge each of the tables into a single table using cbind
   train_data1<-cbind(y,x)
@@ -51,7 +51,7 @@ run_analysis<-
   
   ##Change the headings for each column to the name of the appropriate feature
   
-  names<-read.table("features.txt")
+  names<-read.table("./UCI HAR Dataset/features.txt")
   newnames<-as.character(names$V2)
   
   ##To complete the data frame the first two columns need to be included Subject and Activity  
@@ -75,7 +75,7 @@ run_analysis<-
   mean.std<-get_data[,-mf]
   
   ##Final step, establish the mean of each variable for each activity and each subject using the plyr package, this needs to installed and loaded
-  ##call the tidy data "project_tidy_data
+  ##called the tidy data "project_tidy_data
   library(plyr)
   project_tidy_data<-ddply(mean.std, .(subject,activity), numcolwise(mean))
   
@@ -85,8 +85,8 @@ run_analysis<-
   tidy_col<-gsub("\\()","",tidy_col)
   names(project_tidy_data)<-tidy_col
   
-  ##save the Data Frame to the project folder in a csv format
-  write.csv(project_tidy_data,"project_tidy_data.csv")
+  ##save the Data Frame to the project folder in a txt format
+  write.table(project_tidy_data,"project_tidy_data.txt")
   print("File Name: project_tidy_data")
   print(project_tidy_data)
 }
