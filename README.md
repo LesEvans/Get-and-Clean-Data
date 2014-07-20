@@ -11,7 +11,7 @@ Version 1.0
 ==================================================================
 Jorge L. Reyes-Ortiz, Davide Anguita, Alessandro Ghio, Luca Oneto.
 Smartlab - Non Linear Complex Systems Laboratory
-DITEN - Università degli Studi di Genova.
+DITEN - Universitï¿½ degli Studi di Genova.
 Via Opera Pia 11A, I-16145, Genoa, Italy.
 activityrecognition@smartlab.ws
 www.smartlab.ws
@@ -31,16 +31,20 @@ run_analysis.R produces a tidy data set using the following steps
 5.   Merge the test data into a single data set.
 6.   Repeat steps 1 to 5 with the training data to produce a single training data set
 7.   Merge the training data set and the test data set into a single data frame
-8.   Change the names of the column headings to those provided by Òfeatures.txtÓ, with the addition of two more variables, subjects and activities.
-9.   Select using ÒgrepÓ only those variables that refer to mean or standard deviation.
+8.   Change the names of the column headings to those provided by ï¿½features.txtï¿½, with the addition of two more variables, subjects and activities.
+9.   Select using ï¿½grepï¿½ only those variables that refer to mean or standard deviation.
 10.  Identified that freqMean was also included, identified which columns contained this variable and removed them from the data frame
-11.  Establish the mean and standard deviationof each variable for each activity and each subject using the plyr package, this needs to installed and loaded. The tool that was used ÒnumcolwiseÓ 
-12.  Change the names of each of the column headings to remove Ò-Ò and Ò()Ó.  Retained capital within the names because it made it easier to identify the variables in line with the information provided above.
+11.  Establish the mean and standard deviationof each variable for each activity and each subject using the plyr package, this needs to installed and loaded. The tool that was used ï¿½numcolwiseï¿½ 
+12.  Change the names of each of the column headings to remove ï¿½-ï¿½ and ï¿½()ï¿½.  Retained capital within the names because it made it easier to identify the variables in line with the information provided above.
 13.  Save the file to the working folders as a txt file.
 14.  Print the name of the file, and then the file itself to the console.
 
 
 run_analysis can be run from the working directory, but relies upon the zip file being extracted to the working directory without any changes.  The folder UCI HAR Dataset should contain the test and training data.
+
+When you run run_analysis, it is worth noting that that due to the size of the data sets it takes a couple of minutes to complete the work.
+run_analysis is combined into a single program, so when loaded it performs all the required manipulation. It should run automatically.  If this fails enter  "run_analysis" (without quotation marks)on a command line and press return.
+
 
 CodeBook.md provides details of the variable names.
 run_analysis.docx provides the code, comments on the steps similar to the above and a print out of the tidy data.
