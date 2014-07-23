@@ -32,10 +32,10 @@ run_analysis.R produces a tidy data set using the following steps
 6.   Repeat steps 1 to 5 with the training data to produce a single training data set
 7.   Merge the training data set and the test data set into a single data frame
 8.   Change the names of the column headings to those provided by �features.txt�, with the addition of two more variables, subjects and activities.
-9.   Select using �grep� only those variables that refer to mean or standard deviation.
+9.   Select using 'grep' only those variables that refer to mean or standard deviation.
 10.  Identified that freqMean was also included, identified which columns contained this variable and removed them from the data frame
-11.  Establish the mean and standard deviationof each variable for each activity and each subject using the plyr package, this needs to installed and loaded. The tool that was used �numcolwise� 
-12.  Change the names of each of the column headings to remove �-� and �()�.  Retained capital within the names because it made it easier to identify the variables in line with the information provided above.
+11.  Establish the mean and standard deviationof each variable for each activity and each subject using the plyr package, this needs to installed and loaded. The tool that was used 'numcolwise' 
+12.  Change the names of each of the column headings to remove '-' and '()'.  Retained capital within the names because it made it easier to identify the variables in line with the information provided above.
 13.  Save the file to the working folders as a txt file.
 14.  Print the name of the file, and then the file itself to the console.
 
